@@ -27,25 +27,19 @@ export function AuthContextProvider(props: authContextProviderProps) {
     const [user, setUser] = useState<User>()
 
     async function signInWithGoogle() {
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                if(result.user){
+       const result = await signInWithPopup(auth, provider)
+        if(result.user){
 
-                    const { displayName, email, uid, photoURL } = result?.user;
-                    //   const credential = GoogleAuthProvider.credentialFromResult(result);
-                    //   const token = credential?.accessToken;
-                    setUser({
-                        id: uid,
-                        name: displayName,
-                        email: email,
-                        avatar: photoURL,
-                    })
-                }
-
-            }).catch((error) => {
-                throw new Error('Error na autenticação com o google');
-                console.log(error)
-            });
+            const { displayName, email, uid, photoURL } = result?.user;
+            //   const credential = GoogleAuthProvider.credentialFromResult(result);
+            //   const token = credential?.accessToken;
+            setUser({
+                id: uid,
+                name: displayName,
+                email: email,
+                avatar: photoURL,
+            })
+        }      
     }
 
     return (
