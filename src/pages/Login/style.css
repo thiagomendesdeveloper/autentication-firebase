@@ -7,6 +7,14 @@
     flex-direction: column;
 }
 
+.title{
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
 .button{
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
@@ -19,7 +27,7 @@
     align-items: center;
     color: white;
     margin-bottom: 20px;
-    width: 300px;
+    width: 400px;
 }
 
 .icon-git{
@@ -44,4 +52,28 @@
 .logo{
     width: 18px;
     margin-right: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form input{
+    background: none;
+    height: 45px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.form input::placeholder{
+    color: #a0a0a0;
+}
+
+.create-login{
+    font-size: 18px;
 }
