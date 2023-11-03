@@ -1,24 +1,15 @@
-import { BrowserRouter , Routes, Route} from "react-router-dom";
-import { Login } from "../pages/Login";
-import { Home } from "../pages/Home";
-import { Register } from "../pages/Register";
-import { useNavigate } from "react-router-dom";
-
-const ProtectedRoute = (user?: any) => {
-    return <h1>teste</h1>
-}
+import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { allRoutes } from "./routesConfig";
+import Privado from "./privateRouter";
 
 export function Router(){
-
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" Component={Login} />
-                <Route path="/Login/Cadastrar" Component={Register} />
-                <Route element={<ProtectedRoute />} >
-                    <Route path="/home" Component={Home} />
-                </Route>
+                <Route path="/" Component={allRoutes.Login} />
+                <Route path="/Login/Cadastrar" Component={allRoutes.Cadastrar} />
+                <Route  path='/home' element={<Privado Item={allRoutes.Home} />} />
             </Routes>
         </BrowserRouter>
     )
-}
+} 

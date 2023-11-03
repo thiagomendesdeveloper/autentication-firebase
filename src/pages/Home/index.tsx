@@ -1,9 +1,11 @@
+import firebase from "firebase/compat/app";
 import { useAuth } from "../../contexts/AuthContext"
 import { FaPlus } from "react-icons/fa"; 
 
 export function Home(){
 
     const { user } = useAuth()
+    // const [user] = useAuthState(firebase.auth());
 
     return(
         <div className="container">

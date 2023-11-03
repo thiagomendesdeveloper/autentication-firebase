@@ -39,6 +39,8 @@ export function AuthContextProvider(props: authContextProviderProps) {
                 email: email,
                 avatar: photoURL,
             })
+
+            localStorage.setItem('user', result.user.uid)
         }      
     }
 
